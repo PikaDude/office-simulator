@@ -2,7 +2,7 @@
  * Bot Manager
  */
 
-var SlackBot = require('slackbots');
+var Eris = require('eris');
 
 var Ticker = require('./helpers/ticker');
 var Office = require('./helpers/office');
@@ -15,18 +15,15 @@ class officeSimulator {
   constructor(params) {
 
     this.token = params.token;
-    this.name = params.name;
     this.channel = params.channel
     
     // Off while in the plane
-    this.bot = new SlackBot({
-      token: this.token,
-      name: this.name
-    });
+    this.bot = new Eris(this.token);
+    this.bot.connect();
 
     bindMethods(this, ['init', 'onTick']);
 
-    this.bot.on('start', this.init);
+    this.bot.on('ready', this.init);
   }
 
   // Initial Announcement
@@ -63,7 +60,7 @@ class officeSimulator {
 
   // Speak!
   announce(announcement) {
-    this.bot.postMessageToChannel(this.channel, announcement, {icon_emoji: ':chart_with_downwards_trend:'});
+    this.bot.createMessage(this.channel, '📉 ' + announcement);
   }
 
 }

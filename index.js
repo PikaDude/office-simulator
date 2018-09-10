@@ -3,13 +3,11 @@
  * - Don't forget to clean your forks after using them!
  */
 
-const name    = 'Office Simulator';
-const token   = 'SLACK_API_TOKEN';
-const channel = 'general';
+const token   = 'DISCORD_BOT_TOKEN';
+const channel = 'CHANNEL_ID';
 
 var OfficeSimulator = require('./bot/office-simulator');
 var officeSimulator = new OfficeSimulator({
     token: token,
-    channel: channel,
-    name: name
+    channel: channel
 });

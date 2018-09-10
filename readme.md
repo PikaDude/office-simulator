@@ -1,5 +1,7 @@
 # Office Simulator Slackbot
-Office slack messages are the passive agressive post-its of the modern world. Do you miss the office life? You won't any more with this realistic office slack simulator.
+Office slack messages are the passive agressive post-its of the modern world. Do you miss the office life? You won't any more with this realistic office Discord simulator.
+
+Note that this is a fork from another repository and whilst it is fully functional, it has not been fully edited to resemble the port to Discord.
 
 ## In action
 We have spared no expense, simulating the most realistic office messages, so you are never really at ease!
@@ -30,13 +32,17 @@ We have spared no expense, simulating the most realistic office messages, so you
 
 ## Installation
 
-1. Firstly, you will need to create a new "bot" integration, in your slack [settings](http://my.slack.com/services/new/bot). Type a username `Office Simulator` and click "Add Bot Integration". 
+1. Firstly, you will need to create a new Discord application, in the [Discord Developer Portal](https://discordapp.com/developers/applications/). Type a username `Office Simulator` and click "Save Changes". 
+
+2. Once the application is created, you will need to make it a bot user. Press the "bot" tab on the left, and then click "Add Bot", followed by "Yes, do it!".
 
 2. Once the bot is created, you will be shown an `API token` ... copy this, we'll need it later.
 
-3. Next, clone this project, or download it as a [ZIP](https://github.com/tholman/office-simulator/archive/master.zip) and extract it.
+3. Next, clone this project, or download it as a [ZIP](https://github.com/PikaDude/office-simulator/archive/master.zip) and extract it.
 
-4. Open up `index.js` in the root directory, and add replace `SLACK_API_TOKEN` with your slack token. You can also change the channel from `general` to one of your other channels, if you wish.
+4. Open up `index.js` in the root directory, and add replace `DISCORD_BOT_TOKEN` with your bots token. Then, replace `CHANNEL_ID` with the ID for the channel that the bot will be posting the announcements.
+
+5. Invite the bot to the Discord Server that includes the channel that you provided in the previous step.
 
 5. Finally, run `npm install` and `npm start` in the project, and you should see the initial team building message.
 
